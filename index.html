@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Classifier</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <style>
+        #preview, #webcamVideo {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            display: none;
+            object-fit: cover;
+        }
+        .confidence-bar {
+            width: 300px;
+            height: 20px;
+            background-color: #ddd;
+            margin-top: 10px;
+        }
+        #confidenceBar {
+            height: 100%;
+            background-color: green;
+            width: 0%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Animal & Human Classifier</h1>
+
+    <!-- Image Upload -->
+    <div class="upload-area" id="uploadArea">
+        <p>Drag & drop an image here or click to upload</p>
+        <input type="file" id="imageUpload" accept="image/*">
+        <img id="preview" class="preview-image" src="" alt="Preview">
+    </div>
+
+    <!-- Webcam Section -->
+    <div class="webcam-area">
+        <h3>Or Use Webcam</h3>
+        <button id="startWebcam">Start Webcam</button>
+        <video id="webcamVideo" autoplay></video>
+    </div>
+
+    <!-- Prediction Section -->
+    <div class="prediction-card">
+        <h3>Prediction</h3>
+        <p id="result">No prediction yet</p>
+        <div class="confidence-bar">
+            <div id="confidenceBar"></div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
